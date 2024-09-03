@@ -3,31 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware - Wireless Car Project</title>
+    <title>Hardware Overview - Wireless Car Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Custom styles -->
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 10px; }
+        body { padding-top: 60px; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/hardware/">Hardware</a>
-        <a href="/software/">Software</a>
-        <a href="/assembly/">Assembly</a>
-        <a href="/operation/">Operation</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Wireless Car Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hardware/">Hardware</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/software/">Software</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assembly/">Assembly</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/operation/">Operation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h1>Hardware</h1>
-    <p>This section covers the hardware components of our wireless car project.</p>
-<ul>
-<li>Arduino Board</li>
-<li>Joystick Shield</li>
-<li>nRF24L01 Wireless Module</li>
-<li>Motor Driver</li>
-<li>DC Motors</li>
-<li>Power Supply</li>
-</ul>
 
+    <div class="container mt-4">
+        <h1>Hardware Overview</h1>
+        <p>Welcome to the Hardware Overview for the Wireless Car Project. This page will introduce you to all the components you'll need to bring your wireless car to life using the Funduino joystick shield, NRF24L01 module, and L293D motor driver.</p>
+<h2>Required Components</h2>
+<ol>
+<li>Arduino Uno R3 (x2 - one for the car, one for the controller)</li>
+<li>Funduino Joystick Shield</li>
+<li>NRF24L01 Wireless Transceiver Module (x2)</li>
+<li>L293D Motor Driver IC</li>
+<li>DC Motors (x2)</li>
+<li>Wheels (x2)</li>
+<li>Car Chassis</li>
+<li>9V Battery (x2 - one for the car, one for the controller)</li>
+<li>Battery Connectors (x2)</li>
+<li>Jumper Wires</li>
+<li>Breadboard</li>
+</ol>
+<h2>Component Details</h2>
+<h3>1. Arduino Uno R3</h3>
+<ul>
+<li>Function: The brain of your car and controller</li>
+<li>Specifications: ATmega328P microcontroller, 14 digital I/O pins, 6 analog inputs</li>
+<li>Why it's important: Controls all functions of the car and processes joystick inputs</li>
+</ul>
+<h3>2. Funduino Joystick Shield</h3>
+<ul>
+<li>Function: Provides intuitive control for the car</li>
+<li>Specifications: Dual-axis joystick, multiple push buttons</li>
+<li>Why it's important: Allows easy and precise control of the car's movement</li>
+</ul>
+<h3>3. NRF24L01 Wireless Transceiver Module</h3>
+<ul>
+<li>Function: Enables wireless communication between the controller and the car</li>
+<li>Specifications: 2.4GHz band, up to 100m range</li>
+<li>Why it's important: Provides reliable, low-latency wireless control</li>
+</ul>
+<h3>4. L293D Motor Driver IC</h3>
+<ul>
+<li>Function: Controls the DC motors</li>
+<li>Specifications: Dual H-bridge motor driver, can control up to 2 DC motors</li>
+<li>Why it's important: Allows precise control of motor speed and direction</li>
+</ul>
+<h3>5. DC Motors (x2)</h3>
+<ul>
+<li>Function: Provide movement for the car</li>
+<li>Specifications: 3-6V DC motors (exact specifications may vary)</li>
+<li>Why it's important: Convert electrical energy into mechanical motion</li>
+</ul>
+<h3>6. Wheels (x2)</h3>
+<ul>
+<li>Function: Allow the car to move smoothly on surfaces</li>
+<li>Specifications: Compatible with your chosen DC motors and chassis</li>
+<li>Why it's important: Provide traction and determine the car's movement capabilities</li>
+</ul>
+<h3>7. Car Chassis</h3>
+<ul>
+<li>Function: Serves as the body of the car</li>
+<li>Specifications: Suitable for a two-wheel drive setup</li>
+<li>Why it's important: Provides structure and houses all components</li>
+</ul>
+<h3>8. 9V Batteries (x2)</h3>
+<ul>
+<li>Function: Power source for the car and controller</li>
+<li>Specifications: Standard 9V alkaline or rechargeable batteries</li>
+<li>Why it's important: Provides portable power for both the car and controller</li>
+</ul>
+<h2>Tools You'll Need</h2>
+<ul>
+<li>Soldering iron and solder</li>
+<li>Wire strippers</li>
+<li>Screwdriver set</li>
+<li>Multimeter</li>
+</ul>
+<h2>Safety Precautions</h2>
+<ul>
+<li>Always disconnect power before making changes to your circuit</li>
+<li>Wear safety glasses when soldering</li>
+<li>Work in a well-ventilated area</li>
+<li>Be cautious of sharp edges on the chassis</li>
+</ul>
+<h2>Sourcing Components</h2>
+<p>You can find most of these components at electronics stores or online retailers. Here are some tips:</p>
+<ul>
+<li>Look for Arduino starter kits that might include some of the required components</li>
+<li>Ensure the NRF24L01 modules are compatible with your Arduino</li>
+<li>Double-check motor specifications to ensure they're suitable for your chassis</li>
+</ul>
+<h2>Next Steps</h2>
+<p>Once you have all your components, it's time to set up your software environment. Head over to our <a href="/software/">Software Setup</a> guide to get started!</p>
+<p>Remember, if you have any questions about the hardware, don't hesitate to ask in our community forum. Happy building!</p>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

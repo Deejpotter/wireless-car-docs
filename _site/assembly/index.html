@@ -3,28 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assembly - Wireless Car Project</title>
+    <title>Assembly Guide - Wireless Car Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Custom styles -->
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 10px; }
+        body { padding-top: 60px; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/hardware/">Hardware</a>
-        <a href="/software/">Software</a>
-        <a href="/assembly/">Assembly</a>
-        <a href="/operation/">Operation</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Wireless Car Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hardware/">Hardware</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/software/">Software</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assembly/">Assembly</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/operation/">Operation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h1>Assembly</h1>
-    <p>This section provides instructions for assembling your wireless car.</p>
-<ul>
-<li>Controller Assembly</li>
-<li>Car Assembly</li>
-<li>Testing and Troubleshooting</li>
-</ul>
 
+    <div class="container mt-4">
+        <h1>Assembly Guide</h1>
+        <p>Welcome to the Assembly Guide for your Wireless Car Project. This guide will walk you through the process of putting together your wireless-controlled car using the Funduino joystick shield, NRF24L01 modules, and L293D motor driver. Let's get building!</p>
+<h2>Preparation</h2>
+<p>Estimated time: 3-4 hours</p>
+<p>Tools needed:</p>
+<ul>
+<li>Screwdriver set</li>
+<li>Wire strippers</li>
+<li>Soldering iron and solder</li>
+<li>Multimeter</li>
+</ul>
+<p>Safety precautions:</p>
+<ul>
+<li>Wear safety glasses when soldering</li>
+<li>Work in a well-ventilated area</li>
+<li>Be careful of sharp edges on the chassis</li>
+</ul>
+<h2>Step-by-Step Assembly</h2>
+<h3>Step 1: Prepare the Chassis</h3>
+<ol>
+<li>Unpack the chassis and identify all parts</li>
+<li>Attach the motors to the designated spots on the chassis</li>
+<li>Secure the wheels to the motor shafts</li>
+</ol>
+<p>Tips:</p>
+<ul>
+<li>Ensure motors are firmly attached to prevent wobbling</li>
+<li>Double-check wheel alignment for smooth operation</li>
+</ul>
+<h3>Step 2: Mount the Arduino (Car)</h3>
+<ol>
+<li>Position the Arduino on the car chassis</li>
+<li>Mark screw holes and drill if necessary</li>
+<li>Secure the Arduino using screws or double-sided tape</li>
+</ol>
+<p>Caution: Be careful not to overtighten screws, which could damage the board</p>
+<h3>Step 3: Install the L293D Motor Driver</h3>
+<ol>
+<li>Insert the L293D chip into your breadboard</li>
+<li>Connect the following pins on the L293D to the Arduino:
+<ul>
+<li>Pin 1 (Enable 1,2) to Arduino digital pin 9</li>
+<li>Pin 2 (Input 1) to Arduino digital pin 3</li>
+<li>Pin 7 (Input 2) to Arduino digital pin 4</li>
+<li>Pin 9 (Enable 3,4) to Arduino digital pin 10</li>
+<li>Pin 15 (Input 3) to Arduino digital pin 5</li>
+<li>Pin 10 (Input 4) to Arduino digital pin 6</li>
+</ul>
+</li>
+<li>Connect the motor wires to the appropriate output pins on the L293D</li>
+</ol>
+<p>Common issue: Incorrect motor connections can cause reversed movement. If this happens, swap the motor wires.</p>
+<h3>Step 4: Connect the NRF24L01 Module (Car)</h3>
+<ol>
+<li>Connect the NRF24L01 module to the Arduino:
+<ul>
+<li>VCC to 3.3V</li>
+<li>GND to GND</li>
+<li>CE to digital pin 7</li>
+<li>CSN to digital pin 8</li>
+<li>MOSI to digital pin 11</li>
+<li>MISO to digital pin 12</li>
+<li>SCK to digital pin 13</li>
+</ul>
+</li>
+</ol>
+<p>Note: Use short wires to minimize interference</p>
+<h3>Step 5: Assemble the Controller</h3>
+<ol>
+<li>Attach the Funduino Joystick Shield to the second Arduino Uno</li>
+<li>Connect the second NRF24L01 module to the shield:
+<ul>
+<li>VCC to 3.3V</li>
+<li>GND to GND</li>
+<li>CE to digital pin 7</li>
+<li>CSN to digital pin 8</li>
+<li>MOSI to digital pin 11</li>
+<li>MISO to digital pin 12</li>
+<li>SCK to digital pin 13</li>
+</ul>
+</li>
+</ol>
+<p>Tip: You may need to solder headers to the shield for a secure connection</p>
+<h3>Step 6: Power Connections</h3>
+<ol>
+<li>Connect the 9V battery to the car's Arduino using the battery connector</li>
+<li>Connect another 9V battery to the controller's Arduino</li>
+</ol>
+<p>Caution: Double-check polarity before connecting batteries</p>
+<h3>Step 7: Final Checks</h3>
+<ol>
+<li>Double-check all connections with your circuit diagram</li>
+<li>Ensure all components are securely fastened</li>
+<li>Check for any loose wires or short circuits</li>
+</ol>
+<h2>Troubleshooting</h2>
+<ul>
+<li>Car doesn't move: Check motor connections and battery charge</li>
+<li>No wireless communication: Verify NRF24L01 connections and power</li>
+<li>Erratic movement: Check L293D connections</li>
+</ul>
+<h2>Next Steps</h2>
+<p>Congratulations on assembling your wireless car! The next step is to learn how to operate it. Head over to the <a href="/operation/">Operation Manual</a> to get your car up and running.</p>
+<p>Remember, if you encounter any issues during assembly, don't hesitate to ask for help in our community forum. Happy building!</p>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
