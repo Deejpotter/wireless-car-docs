@@ -3,29 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software - Wireless Car Project</title>
+    <title>Software Setup - Wireless Car Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Custom styles -->
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 10px; }
+        body { padding-top: 60px; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/hardware/">Hardware</a>
-        <a href="/software/">Software</a>
-        <a href="/assembly/">Assembly</a>
-        <a href="/operation/">Operation</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Wireless Car Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hardware/">Hardware</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/software/">Software</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assembly/">Assembly</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/operation/">Operation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h1>Software</h1>
-    <p>This section covers the software aspects of our wireless car project.</p>
-<ul>
-<li>Arduino IDE Setup</li>
-<li>Required Libraries</li>
-<li>Controller Code</li>
-<li>Car Code</li>
-</ul>
 
+    <div class="container mt-4">
+        <h1>Software Setup</h1>
+        <p>Welcome to the Software Setup guide for your Wireless Car Project. In this section, we'll walk you through installing and configuring all the necessary software to program your Arduino, set up the NRF24L01 modules, and control your car using the Funduino joystick shield.</p>
+<h2>Required Software</h2>
+<ol>
+<li>Arduino IDE</li>
+<li>RF24 Library</li>
+<li>Funduino Joystick Shield Library</li>
+</ol>
+<h2>Step-by-Step Installation Guide</h2>
+<h3>1. Installing Arduino IDE</h3>
+<ol>
+<li>Go to the <a href="https://www.arduino.cc/en/software">official Arduino website</a></li>
+<li>Download the appropriate version for your operating system</li>
+<li>Run the installer and follow the prompts</li>
+<li>Once installed, open Arduino IDE</li>
+</ol>
+<p>Tips:</p>
+<ul>
+<li>Make sure you have admin rights on your computer</li>
+<li>If you encounter any errors, try running the installer as administrator</li>
+</ul>
+<h3>2. Installing RF24 Library</h3>
+<ol>
+<li>In Arduino IDE, go to Sketch &gt; Include Library &gt; Manage Libraries</li>
+<li>In the search bar, type &quot;RF24&quot;</li>
+<li>Find the library by TMRh20 and click &quot;Install&quot;</li>
+</ol>
+<h3>3. Installing Funduino Joystick Shield Library</h3>
+<ol>
+<li>Download the Funduino library from <a href="https://github.com/Funduino/FunduinoJoystickShield">this GitHub repository</a></li>
+<li>In Arduino IDE, go to Sketch &gt; Include Library &gt; Add .ZIP Library</li>
+<li>Navigate to the downloaded ZIP file and select it</li>
+</ol>
+<h2>Configuring Arduino IDE</h2>
+<ol>
+<li>Open Arduino IDE</li>
+<li>Go to Tools &gt; Board and select &quot;Arduino Uno&quot;</li>
+<li>Go to Tools &gt; Port and select the COM port your Arduino is connected to</li>
+</ol>
+<p>If you don't see your Arduino:</p>
+<ul>
+<li>Check if it's properly connected</li>
+<li>Try a different USB cable</li>
+<li>Ensure drivers are correctly installed</li>
+</ul>
+<h2>Testing Your Setup</h2>
+<ol>
+<li>Connect your Arduino to your computer</li>
+<li>Open Arduino IDE</li>
+<li>Load the example sketch for the NRF24L01:
+File &gt; Examples &gt; RF24 &gt; GettingStarted</li>
+<li>Modify the CE and CSN pin numbers if necessary</li>
+<li>Click the &quot;Upload&quot; button (right arrow icon)</li>
+<li>Open the Serial Monitor to check for output</li>
+</ol>
+<p>For the Funduino Joystick Shield:</p>
+<ol>
+<li>Load the example sketch:
+File &gt; Examples &gt; FunduinoJoystickShield &gt; JoystickShield</li>
+<li>Upload the sketch</li>
+<li>Open the Serial Monitor to see joystick and button inputs</li>
+</ol>
+<p>If you encounter errors:</p>
+<ul>
+<li>Double-check your board and port selection</li>
+<li>Ensure your Arduino is properly connected</li>
+<li>Verify that the libraries are correctly installed</li>
+</ul>
+<h2>Troubleshooting Common Issues</h2>
+<ul>
+<li>&quot;Library not found&quot;: Ensure you've installed the RF24 and Funduino libraries correctly</li>
+<li>&quot;Port not found&quot;: Try unplugging and replugging your Arduino</li>
+<li>&quot;Access is denied&quot;: Close any programs that might be using the COM port</li>
+<li>Compilation errors: Ensure you have the latest Arduino IDE version</li>
+</ul>
+<h2>Next Steps</h2>
+<p>Congratulations! Your software environment is now set up. You're ready to move on to the <a href="/assembly/">Assembly Guide</a> and start building your wireless car.</p>
+<p>Remember, if you encounter any issues during setup, our community forum is here to help. Don't hesitate to ask questions!</p>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

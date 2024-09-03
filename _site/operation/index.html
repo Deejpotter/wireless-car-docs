@@ -3,29 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operation - Wireless Car Project</title>
+    <title>Operation Manual - Wireless Car Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Custom styles -->
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 10px; }
+        body { padding-top: 60px; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/hardware/">Hardware</a>
-        <a href="/software/">Software</a>
-        <a href="/assembly/">Assembly</a>
-        <a href="/operation/">Operation</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Wireless Car Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hardware/">Hardware</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/software/">Software</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assembly/">Assembly</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/operation/">Operation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h1>Operation</h1>
-    <p>This section covers how to operate and maintain your wireless car.</p>
-<ul>
-<li>Controller Operation</li>
-<li>Car Operation</li>
-<li>Maintenance</li>
-<li>Safety Guidelines</li>
-</ul>
 
+    <div class="container mt-4">
+        <h1>Operation Manual</h1>
+        <p>Welcome to the Operation Manual for your Wireless Car Project. This guide will teach you how to control, maintain, and troubleshoot your newly built wireless car using the Funduino joystick shield and NRF24L01 modules. Let's get rolling!</p>
+<h2>Getting Started</h2>
+<p>Estimated setup time: 5-10 minutes</p>
+<p>Before you begin:</p>
+<ul>
+<li>Ensure your car and controller are fully assembled</li>
+<li>Check that both batteries are charged and connected</li>
+<li>Upload the appropriate sketches to both Arduinos (car and controller)</li>
+</ul>
+<h2>Powering On Your Car and Controller</h2>
+<ol>
+<li>Locate the power switches on your car chassis and controller</li>
+<li>Flip both switches to the &quot;ON&quot; position</li>
+<li>Look for the power LEDs on both Arduinos to confirm they're receiving power</li>
+</ol>
+<p>Tip: If an LED doesn't light up, check the battery connections</p>
+<h2>Establishing Wireless Connection</h2>
+<p>The NRF24L01 modules should automatically establish a connection when both devices are powered on. However, if you experience issues:</p>
+<ol>
+<li>Ensure both devices are within range (up to 100m in open areas)</li>
+<li>Check that both NRF24L01 modules are properly connected</li>
+<li>Verify that the correct sketches are uploaded to both Arduinos</li>
+</ol>
+<h2>Controlling Your Car</h2>
+<p>The Funduino Joystick Shield provides intuitive control for your car:</p>
+<ul>
+<li>Joystick Up: Move Forward</li>
+<li>Joystick Down: Move Backward</li>
+<li>Joystick Left: Turn Left</li>
+<li>Joystick Right: Turn Right</li>
+<li>Joystick Center (neutral): Stop</li>
+</ul>
+<p>Additional buttons on the shield can be programmed for custom functions, such as:</p>
+<ul>
+<li>Button 1: Toggle headlights (if implemented)</li>
+<li>Button 2: Sound horn (if implemented)</li>
+<li>Button 3: Boost speed</li>
+</ul>
+<p>Tip: Start with gentle joystick movements to get a feel for the controls</p>
+<h2>Advanced Operations</h2>
+<ul>
+<li>Fine Control: The analog nature of the joystick allows for precise speed and steering control</li>
+<li>Simultaneous Actions: You can move forward/backward while turning for smooth curved movements</li>
+<li>Custom Functions: Implement additional features using the extra buttons on the shield</li>
+</ul>
+<h2>Maintenance</h2>
+<p>Regular maintenance will keep your car running smoothly:</p>
+<ol>
+<li>
+<p>Battery Care:</p>
+<ul>
+<li>Recharge or replace batteries when performance decreases</li>
+<li>Check for any signs of swelling or damage</li>
+</ul>
+</li>
+<li>
+<p>Wheel and Motor Care:</p>
+<ul>
+<li>Keep wheels clean and free from debris</li>
+<li>Lubricate motor shafts if you hear squeaking</li>
+</ul>
+</li>
+<li>
+<p>Connection Check:</p>
+<ul>
+<li>Periodically check all wire connections</li>
+<li>Re-solder any loose connections</li>
+</ul>
+</li>
+<li>
+<p>NRF24L01 Module Care:</p>
+<ul>
+<li>Keep the antennas clear of obstructions</li>
+<li>Check for any bent pins or damage</li>
+</ul>
+</li>
+</ol>
+<h2>Troubleshooting</h2>
+<ol>
+<li>
+<p>Car won't move:</p>
+<ul>
+<li>Check battery charge on both car and controller</li>
+<li>Verify motor connections to the L293D driver</li>
+</ul>
+</li>
+<li>
+<p>No wireless connection:</p>
+<ul>
+<li>Ensure both NRF24L01 modules are properly connected</li>
+<li>Check for interference from other devices</li>
+<li>Verify that both devices are using the same channel and address</li>
+</ul>
+</li>
+<li>
+<p>Erratic movement:</p>
+<ul>
+<li>Check for loose wheels or motor connections</li>
+<li>Verify L293D driver connections</li>
+</ul>
+</li>
+<li>
+<p>Limited range:</p>
+<ul>
+<li>Check NRF24L01 antenna orientation</li>
+<li>Move to an area with less interference</li>
+</ul>
+</li>
+</ol>
+<h2>Customization Ideas</h2>
+<ul>
+<li>Add LED lights for night operation</li>
+<li>Implement obstacle detection with ultrasonic sensors</li>
+<li>Create custom control sequences for complex maneuvers</li>
+<li>Add a small servo for a movable camera or sensor platform</li>
+</ul>
+<h2>Safety Guidelines</h2>
+<ul>
+<li>Operate in a clear, open area</li>
+<li>Avoid wet conditions to protect electronics</li>
+<li>Keep fingers away from moving parts, especially wheels and motors</li>
+<li>Supervise children during operation</li>
+<li>Be mindful of others when operating in public spaces</li>
+</ul>
+<h2>Next Steps</h2>
+<p>Now that you're familiar with operating your wireless car, why not try some modifications? Check out our community forum for ideas and share your own experiences!</p>
+<p>Remember, the key to mastering your wireless car is practice and experimentation. Enjoy exploring all the capabilities of your new creation!</p>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
