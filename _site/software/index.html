@@ -3,124 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Setup - Wireless Car Project</title>
+    <title>Software Setup - DIY Wireless Arduino Car | Wireless Car Project</title>
+    <meta name="description" content="Guide for programming the Arduino to control the DIY Wireless Arduino Car, including wireless communication setup.">
+    <meta name="author" content="Your Name">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Custom styles -->
     <style>
         body { padding-top: 60px; }
+        .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e5e5; }
+        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .navbar-brand { font-weight: bold; color: #007bff; }
+        .nav-item { margin-right: 10px; }
+        .nav-link { color: #333; transition: color 0.3s ease; }
+        .nav-link:hover { color: #007bff; }
+        .nav-link.active { font-weight: bold; color: #007bff; }
+        @media (max-width: 991.98px) {
+            .navbar-nav { padding-top: 1rem; }
+            .nav-item { margin-bottom: 0.5rem; }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">Wireless Car Project</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hardware/">Hardware</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/software/">Software</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/assembly/">Assembly</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/operation/">Operation</a>
-                    </li>
+                <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav"><li class="nav-item"><a href="/">Home</a></li>
+<li class="nav-item"><a href="/mechanical/">Mechanical Assembly</a></li>
+<li class="nav-item"><a href="/electrical/">Electrical Assembly</a></li>
+<li class="nav-item"><a href="/software/">Software Setup</a></li>
+<li class="nav-item"><a href="/integration/">Integration & Testing</a></li>
+<li class="nav-item"><a href="/operation/">Operation Guide</a></li>
+<li class="nav-item"><a href="/faq/">FAQ</a></li></ul>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h1>Software Setup</h1>
-        <p>Welcome to the Software Setup guide for your Wireless Car Project. In this section, we'll walk you through installing and configuring all the necessary software to program your Arduino, set up the NRF24L01 modules, and control your car using the Funduino joystick shield.</p>
-<h2>Required Software</h2>
-<ol>
-<li>Arduino IDE</li>
-<li>RF24 Library</li>
-<li>Funduino Joystick Shield Library</li>
-</ol>
-<h2>Step-by-Step Installation Guide</h2>
-<h3>1. Installing Arduino IDE</h3>
-<ol>
-<li>Go to the <a href="https://www.arduino.cc/en/software">official Arduino website</a></li>
-<li>Download the appropriate version for your operating system</li>
-<li>Run the installer and follow the prompts</li>
-<li>Once installed, open Arduino IDE</li>
-</ol>
-<p>Tips:</p>
+        <h1>Software Setup - DIY Wireless Arduino Car</h1>
+        
+        <p class="text-muted">Published on September 8, 2023</p>
+        
+        <h2>Software Setup</h2>
+<p>Welcome to the software setup phase of our DIY Wireless Arduino Car project. In this section, we'll program the Arduino to control our car and set up wireless communication.</p>
+<h2>Required Tools and Software</h2>
+<p>Before we begin, ensure you have the following:</p>
 <ul>
-<li>Make sure you have admin rights on your computer</li>
-<li>If you encounter any errors, try running the installer as administrator</li>
+<li>Arduino IDE (latest version)</li>
+<li>USB cable (to connect Arduino to your computer)</li>
+<li>NRF24L01 library (RF24 library)</li>
+<li>Your assembled car with all electronics connected</li>
 </ul>
-<h3>2. Installing RF24 Library</h3>
+<h2>Setup Steps</h2>
+<h3>1. Install Arduino IDE</h3>
 <ol>
-<li>In Arduino IDE, go to Sketch &gt; Include Library &gt; Manage Libraries</li>
-<li>In the search bar, type &quot;RF24&quot;</li>
-<li>Find the library by TMRh20 and click &quot;Install&quot;</li>
+<li>If you haven't already, download and install the <a href="https://www.arduino.cc/en/software">Arduino IDE</a> from the official website.</li>
+<li>Launch the Arduino IDE once installed.</li>
 </ol>
-<h3>3. Installing Funduino Joystick Shield Library</h3>
+<h3>2. Install Required Libraries</h3>
 <ol>
-<li>Download the Funduino library from <a href="https://github.com/Funduino/FunduinoJoystickShield">this GitHub repository</a></li>
-<li>In Arduino IDE, go to Sketch &gt; Include Library &gt; Add .ZIP Library</li>
-<li>Navigate to the downloaded ZIP file and select it</li>
+<li>In the Arduino IDE, go to Sketch &gt; Include Library &gt; Manage Libraries.</li>
+<li>Search for &quot;RF24&quot; and install the library by TMRh20.</li>
 </ol>
-<h2>Configuring Arduino IDE</h2>
+<h3>3. Connect Your Arduino</h3>
 <ol>
-<li>Open Arduino IDE</li>
-<li>Go to Tools &gt; Board and select &quot;Arduino Uno&quot;</li>
-<li>Go to Tools &gt; Port and select the COM port your Arduino is connected to</li>
+<li>Use the USB cable to connect your Arduino to your computer.</li>
+<li>In the Arduino IDE, go to Tools &gt; Board and select &quot;Arduino Uno&quot;.</li>
+<li>Go to Tools &gt; Port and select the port your Arduino is connected to.</li>
 </ol>
-<p>If you don't see your Arduino:</p>
+<h3>4. Write the Arduino Code</h3>
+<p>Here's a basic code structure for our wireless car. We'll create two separate sketches: one for the car (receiver) and one for the controller (transmitter).</p>
+<h4>Car (Receiver) Code</h4>
+<pre><code class="language-cpp">#include &lt;SPI.h&gt;
+#include &lt;RF24.h&gt;
+
+RF24 radio(7, 8); // CE, CSN pins
+const byte address[6] = &quot;00001&quot;;
+
+// Motor control pins
+const int leftMotorPin1 = 3;
+const int leftMotorPin2 = 5;
+const int rightMotorPin1 = 6;
+const int rightMotorPin2 = 11;
+
+void setup() {
+  radio.begin();
+  radio.openReadingPipe(0, address);
+  radio.setPALevel(RF24_PA_MIN);
+  radio.startListening();
+
+  pinMode(leftMotorPin1, OUTPUT);
+  pinMode(leftMotorPin2, OUTPUT);
+  pinMode(rightMotorPin1, OUTPUT);
+  pinMode(rightMotorPin2, OUTPUT);
+}
+
+void loop() {
+  if (radio.available()) {
+    char text[32] = &quot;&quot;;
+    radio.read(&amp;text, sizeof(text));
+    processCommand(text);
+  }
+}
+
+void processCommand(const char* command) {
+  if (strcmp(command, &quot;FORWARD&quot;) == 0) {
+    moveForward();
+  } else if (strcmp(command, &quot;BACKWARD&quot;) == 0) {
+    moveBackward();
+  } else if (strcmp(command, &quot;LEFT&quot;) == 0) {
+    turnLeft();
+  } else if (strcmp(command, &quot;RIGHT&quot;) == 0) {
+    turnRight();
+  } else if (strcmp(command, &quot;STOP&quot;) == 0) {
+    stopMotors();
+  }
+}
+
+// Implement moveForward(), moveBackward(), turnLeft(), turnRight(), stopMotors() functions
+</code></pre>
+<h4>Controller (Transmitter) Code</h4>
+<pre><code class="language-cpp">#include &lt;SPI.h&gt;
+#include &lt;RF24.h&gt;
+
+RF24 radio(7, 8); // CE, CSN pins
+const byte address[6] = &quot;00001&quot;;
+
+// Joystick pins
+const int joystickXPin = A0;
+const int joystickYPin = A1;
+
+void setup() {
+  radio.begin();
+  radio.openWritingPipe(address);
+  radio.setPALevel(RF24_PA_MIN);
+  radio.stopListening();
+}
+
+void loop() {
+  int xValue = analogRead(joystickXPin);
+  int yValue = analogRead(joystickYPin);
+
+  if (yValue &lt; 400) {
+    radio.write(&quot;FORWARD&quot;, 7);
+  } else if (yValue &gt; 600) {
+    radio.write(&quot;BACKWARD&quot;, 8);
+  } else if (xValue &lt; 400) {
+    radio.write(&quot;LEFT&quot;, 4);
+  } else if (xValue &gt; 600) {
+    radio.write(&quot;RIGHT&quot;, 5);
+  } else {
+    radio.write(&quot;STOP&quot;, 4);
+  }
+
+  delay(100);
+}
+</code></pre>
+<h3>5. Upload the Code</h3>
+<ol>
+<li>For the car: Connect the Arduino in your car to the computer, select the correct board and port, then click the Upload button.</li>
+<li>For the controller: Connect the Arduino for your controller, select the correct board and port, then click the Upload button.</li>
+</ol>
+<h3>6. Test the Setup</h3>
+<ol>
+<li>Power on both the car and the controller.</li>
+<li>Move the joystick on the controller and verify that the car responds correctly.</li>
+</ol>
+<h2>Troubleshooting</h2>
 <ul>
-<li>Check if it's properly connected</li>
-<li>Try a different USB cable</li>
-<li>Ensure drivers are correctly installed</li>
-</ul>
-<h2>Testing Your Setup</h2>
-<ol>
-<li>Connect your Arduino to your computer</li>
-<li>Open Arduino IDE</li>
-<li>Load the example sketch for the NRF24L01:
-File &gt; Examples &gt; RF24 &gt; GettingStarted</li>
-<li>Modify the CE and CSN pin numbers if necessary</li>
-<li>Click the &quot;Upload&quot; button (right arrow icon)</li>
-<li>Open the Serial Monitor to check for output</li>
-</ol>
-<p>For the Funduino Joystick Shield:</p>
-<ol>
-<li>Load the example sketch:
-File &gt; Examples &gt; FunduinoJoystickShield &gt; JoystickShield</li>
-<li>Upload the sketch</li>
-<li>Open the Serial Monitor to see joystick and button inputs</li>
-</ol>
-<p>If you encounter errors:</p>
-<ul>
-<li>Double-check your board and port selection</li>
-<li>Ensure your Arduino is properly connected</li>
-<li>Verify that the libraries are correctly installed</li>
-</ul>
-<h2>Troubleshooting Common Issues</h2>
-<ul>
-<li>&quot;Library not found&quot;: Ensure you've installed the RF24 and Funduino libraries correctly</li>
-<li>&quot;Port not found&quot;: Try unplugging and replugging your Arduino</li>
-<li>&quot;Access is denied&quot;: Close any programs that might be using the COM port</li>
-<li>Compilation errors: Ensure you have the latest Arduino IDE version</li>
+<li>If the car doesn't respond, check all wiring connections.</li>
+<li>Ensure both Arduinos are powered and the NRF24L01 modules are correctly connected.</li>
+<li>Verify that you're using the same address in both the transmitter and receiver code.</li>
 </ul>
 <h2>Next Steps</h2>
-<p>Congratulations! Your software environment is now set up. You're ready to move on to the <a href="/assembly/">Assembly Guide</a> and start building your wireless car.</p>
-<p>Remember, if you encounter any issues during setup, our community forum is here to help. Don't hesitate to ask questions!</p>
+<p>Great job! You've now programmed your DIY Wireless Arduino Car. In the next section, <a href="/integration/">Integration &amp; Testing</a>, we'll bring everything together and perform comprehensive tests on our car.</p>
+<p>Remember, programming can be tricky, and it might take some debugging to get everything working perfectly. Don't hesitate to consult the <a href="/faq/">FAQ</a> or ask for help if you run into any issues. Happy coding!</p>
 
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Written by Your Name</p>
+            
+            <p>Tags: 
+                
+                    
+                        <a href="/tags/project">project</a>, 
+                    
+                
+                    
+                        <a href="/tags/software">software</a>
+                    
+                
+            </p>
+            
+        </div>
+    </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

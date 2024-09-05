@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Assembly - DIY Wireless Arduino Car | Wireless Car Project</title>
+    <meta name="description" content="Step-by-step guide for wiring and connecting the electronic components of the DIY Wireless Arduino Car.">
+    <meta name="author" content="Your Name">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Custom styles -->
+    <style>
+        body { padding-top: 60px; }
+        .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e5e5; }
+        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .navbar-brand { font-weight: bold; color: #007bff; }
+        .nav-item { margin-right: 10px; }
+        .nav-link { color: #333; transition: color 0.3s ease; }
+        .nav-link:hover { color: #007bff; }
+        .nav-link.active { font-weight: bold; color: #007bff; }
+        @media (max-width: 991.98px) {
+            .navbar-nav { padding-top: 1rem; }
+            .nav-item { margin-bottom: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Wireless Car Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav"><li class="nav-item"><a href="/">Home</a></li>
+<li class="nav-item"><a href="/mechanical/">Mechanical Assembly</a></li>
+<li class="nav-item"><a href="/electrical/">Electrical Assembly</a></li>
+<li class="nav-item"><a href="/software/">Software Setup</a></li>
+<li class="nav-item"><a href="/integration/">Integration & Testing</a></li>
+<li class="nav-item"><a href="/operation/">Operation Guide</a></li>
+<li class="nav-item"><a href="/faq/">FAQ</a></li></ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Electrical Assembly - DIY Wireless Arduino Car</h1>
+        
+        <p class="text-muted">Published on September 7, 2023</p>
+        
+        <h2>Electrical Assembly</h2>
+<p>Welcome to the electrical assembly phase of our DIY Wireless Arduino Car project. In this section, we'll wire up all the electronic components, creating the brain and nervous system of our car.</p>
+<h2>Required Components and Tools</h2>
+<p>Before we begin, ensure you have the following:</p>
+<h3>Components</h3>
+<ul>
+<li>Arduino Uno R3</li>
+<li>L293D Dual H-Bridge Motor Driver</li>
+<li>NRF24L01 2.4GHz Transceiver</li>
+<li>Breadboard</li>
+<li>Jumper wires (male-to-male, male-to-female)</li>
+<li>9V battery</li>
+<li>Battery connector</li>
+<li>100μF capacitor</li>
+<li>Resistors (as needed for your specific components)</li>
+</ul>
+<h3>Tools</h3>
+<ul>
+<li>Wire stripper</li>
+<li>Soldering iron and solder (for any necessary connections)</li>
+<li>Multimeter</li>
+<li>Needle-nose pliers</li>
+</ul>
+<h2>Assembly Steps</h2>
+<h3>1. Prepare the Breadboard</h3>
+<ol>
+<li>Place the breadboard on the top plate of your chassis where you marked during mechanical assembly.</li>
+<li>If using double-sided tape or putty, secure the breadboard to the chassis.</li>
+</ol>
+<h3>2. Connect the Power Supply</h3>
+<ol>
+<li>Attach the 9V battery connector to the breadboard.</li>
+<li>Connect the positive (red) wire to the positive rail and the negative (black) wire to the negative rail of the breadboard.</li>
+<li>Add the 100μF capacitor across the power rails to help stabilize the voltage.</li>
+</ol>
+<h3>3. Set Up the Arduino</h3>
+<ol>
+<li>Place the Arduino Uno on the chassis in its designated spot.</li>
+<li>Connect the Arduino's 5V pin to the breadboard's positive rail and the GND pin to the negative rail.</li>
+</ol>
+<h3>4. Wire the L293D Motor Driver</h3>
+<ol>
+<li>Insert the L293D chip into the breadboard.</li>
+<li>Connect the chip's power pins:
+<ul>
+<li>Pin 16 (VSS) to the positive rail</li>
+<li>Pin 8 (VS) to the positive rail</li>
+<li>Pin 4 and 5 (GND) to the negative rail</li>
+</ul>
+</li>
+<li>Connect the control pins to the Arduino:
+<ul>
+<li>Pin 1 (Enable 1,2) to Arduino pin 9</li>
+<li>Pin 2 (Input 1) to Arduino pin 3</li>
+<li>Pin 7 (Input 2) to Arduino pin 5</li>
+<li>Pin 9 (Enable 3,4) to Arduino pin 10</li>
+<li>Pin 15 (Input 3) to Arduino pin 6</li>
+<li>Pin 10 (Input 4) to Arduino pin 11</li>
+</ul>
+</li>
+</ol>
+<h3>5. Connect the Motors</h3>
+<ol>
+<li>Connect the left motors to pins 3 and 6 of the L293D.</li>
+<li>Connect the right motors to pins 11 and 14 of the L293D.</li>
+<li>Ensure the polarity is correct for forward motion.</li>
+</ol>
+<h3>6. Set Up the NRF24L01 Transceiver</h3>
+<ol>
+<li>Insert the NRF24L01 module into the breadboard.</li>
+<li>Connect the module to the Arduino:
+<ul>
+<li>VCC to 3.3V</li>
+<li>GND to GND</li>
+<li>CE to pin 7</li>
+<li>CSN to pin 8</li>
+<li>SCK to pin 13</li>
+<li>MOSI to pin 11</li>
+<li>MISO to pin 12</li>
+</ul>
+</li>
+</ol>
+<h2>Final Checks</h2>
+<ol>
+<li>Double-check all connections against your wiring diagram.</li>
+<li>Ensure there are no short circuits using your multimeter.</li>
+<li>Verify that all components are securely fastened to the chassis.</li>
+</ol>
+<h2>Next Steps</h2>
+<p>Great job! You've completed the electrical assembly of your DIY Wireless Arduino Car. The car now has its electronic nervous system in place.</p>
+<p>In the next section, we'll move on to <a href="/software/">Software Setup</a>, where we'll program the Arduino to control our newly assembled car.</p>
+<p>Remember, if you encounter any issues or have questions about the wiring, consult the <a href="/faq/">FAQ</a> or feel free to ask for help. Proper electrical connections are crucial for the functioning of your car, so take your time and be precise. Happy wiring!</p>
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Written by Your Name</p>
+            
+            <p>Tags: 
+                
+                    
+                        <a href="/tags/project">project</a>, 
+                    
+                
+                    
+                        <a href="/tags/electrical">electrical</a>
+                    
+                
+            </p>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

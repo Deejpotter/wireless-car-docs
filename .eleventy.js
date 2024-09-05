@@ -1,8 +1,17 @@
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
 module.exports = function (eleventyConfig) {
-  // Custom shortcode for the row element.
-  eleventyConfig.addPairedShortcode("row", function (content) {
-    return `<div class="row">${content}</div>`;
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  // Add a date filter (adjust the format as needed)
+  eleventyConfig.addFilter("dateFilter", function (date) {
+    return new Date(date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   });
+
 
   // Set the formats for templates to use.
   eleventyConfig.setTemplateFormats([

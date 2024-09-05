@@ -3,174 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operation Manual - Wireless Car Project</title>
+    <title>Operation Guide - DIY Wireless Arduino Car | Wireless Car Project</title>
+    <meta name="description" content="Comprehensive guide on how to operate and maintain your DIY Wireless Arduino Car.">
+    <meta name="author" content="Your Name">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Custom styles -->
     <style>
         body { padding-top: 60px; }
+        .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e5e5; }
+        .navbar { box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .navbar-brand { font-weight: bold; color: #007bff; }
+        .nav-item { margin-right: 10px; }
+        .nav-link { color: #333; transition: color 0.3s ease; }
+        .nav-link:hover { color: #007bff; }
+        .nav-link.active { font-weight: bold; color: #007bff; }
+        @media (max-width: 991.98px) {
+            .navbar-nav { padding-top: 1rem; }
+            .nav-item { margin-bottom: 0.5rem; }
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">Wireless Car Project</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hardware/">Hardware</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/software/">Software</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/assembly/">Assembly</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/operation/">Operation</a>
-                    </li>
+                <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav"><li class="nav-item"><a href="/">Home</a></li>
+<li class="nav-item"><a href="/mechanical/">Mechanical Assembly</a></li>
+<li class="nav-item"><a href="/electrical/">Electrical Assembly</a></li>
+<li class="nav-item"><a href="/software/">Software Setup</a></li>
+<li class="nav-item"><a href="/integration/">Integration & Testing</a></li>
+<li class="nav-item"><a href="/operation/">Operation Guide</a></li>
+<li class="nav-item"><a href="/faq/">FAQ</a></li></ul>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h1>Operation Manual</h1>
-        <p>Welcome to the Operation Manual for your Wireless Car Project. This guide will teach you how to control, maintain, and troubleshoot your newly built wireless car using the Funduino joystick shield and NRF24L01 modules. Let's get rolling!</p>
-<h2>Getting Started</h2>
-<p>Estimated setup time: 5-10 minutes</p>
-<p>Before you begin:</p>
-<ul>
-<li>Ensure your car and controller are fully assembled</li>
-<li>Check that both batteries are charged and connected</li>
-<li>Upload the appropriate sketches to both Arduinos (car and controller)</li>
-</ul>
-<h2>Powering On Your Car and Controller</h2>
+        <h1>Operation Guide - DIY Wireless Arduino Car</h1>
+        
+        <p class="text-muted">Published on September 10, 2023</p>
+        
+        <h2>Operation Guide</h2>
+<p>Congratulations on completing your DIY Wireless Arduino Car! This guide will walk you through the operation and maintenance of your new creation.</p>
+<h2>Pre-Operation Checklist</h2>
+<p>Before each use, ensure:</p>
 <ol>
-<li>Locate the power switches on your car chassis and controller</li>
-<li>Flip both switches to the &quot;ON&quot; position</li>
-<li>Look for the power LEDs on both Arduinos to confirm they're receiving power</li>
+<li>Batteries in both car and controller are charged</li>
+<li>All connections are secure</li>
+<li>Wheels are free from obstructions</li>
+<li>Operating area is clear and safe</li>
 </ol>
-<p>Tip: If an LED doesn't light up, check the battery connections</p>
-<h2>Establishing Wireless Connection</h2>
-<p>The NRF24L01 modules should automatically establish a connection when both devices are powered on. However, if you experience issues:</p>
+<h2>Basic Operation</h2>
+<h3>Powering On</h3>
 <ol>
-<li>Ensure both devices are within range (up to 100m in open areas)</li>
-<li>Check that both NRF24L01 modules are properly connected</li>
-<li>Verify that the correct sketches are uploaded to both Arduinos</li>
+<li>Turn on the power switch on the car chassis</li>
+<li>Turn on the controller</li>
+<li>Wait for the indicator LED to show successful connection</li>
 </ol>
-<h2>Controlling Your Car</h2>
-<p>The Funduino Joystick Shield provides intuitive control for your car:</p>
+<h3>Control Commands</h3>
 <ul>
-<li>Joystick Up: Move Forward</li>
-<li>Joystick Down: Move Backward</li>
-<li>Joystick Left: Turn Left</li>
-<li>Joystick Right: Turn Right</li>
-<li>Joystick Center (neutral): Stop</li>
+<li><strong>Forward</strong>: Push the joystick forward</li>
+<li><strong>Reverse</strong>: Pull the joystick backward</li>
+<li><strong>Left Turn</strong>: Push the joystick left</li>
+<li><strong>Right Turn</strong>: Push the joystick right</li>
+<li><strong>Stop</strong>: Release the joystick (it should return to center position)</li>
 </ul>
-<p>Additional buttons on the shield can be programmed for custom functions, such as:</p>
+<h3>Tips for Smooth Operation</h3>
 <ul>
-<li>Button 1: Toggle headlights (if implemented)</li>
-<li>Button 2: Sound horn (if implemented)</li>
-<li>Button 3: Boost speed</li>
-</ul>
-<p>Tip: Start with gentle joystick movements to get a feel for the controls</p>
-<h2>Advanced Operations</h2>
-<ul>
-<li>Fine Control: The analog nature of the joystick allows for precise speed and steering control</li>
-<li>Simultaneous Actions: You can move forward/backward while turning for smooth curved movements</li>
-<li>Custom Functions: Implement additional features using the extra buttons on the shield</li>
+<li>Start with gentle movements to get a feel for the car's responsiveness</li>
+<li>Practice in an open area before attempting more complex maneuvers</li>
+<li>Be mindful of the car's turning radius when navigating tight spaces</li>
 </ul>
 <h2>Maintenance</h2>
 <p>Regular maintenance will keep your car running smoothly:</p>
+<h3>After Each Use</h3>
 <ol>
-<li>
-<p>Battery Care:</p>
-<ul>
-<li>Recharge or replace batteries when performance decreases</li>
-<li>Check for any signs of swelling or damage</li>
-</ul>
-</li>
-<li>
-<p>Wheel and Motor Care:</p>
-<ul>
-<li>Keep wheels clean and free from debris</li>
-<li>Lubricate motor shafts if you hear squeaking</li>
-</ul>
-</li>
-<li>
-<p>Connection Check:</p>
-<ul>
-<li>Periodically check all wire connections</li>
-<li>Re-solder any loose connections</li>
-</ul>
-</li>
-<li>
-<p>NRF24L01 Module Care:</p>
-<ul>
-<li>Keep the antennas clear of obstructions</li>
-<li>Check for any bent pins or damage</li>
-</ul>
-</li>
+<li>Turn off both car and controller</li>
+<li>Check for any loose screws or connections</li>
+<li>Clean the wheels and chassis of any debris</li>
 </ol>
+<h3>Monthly Maintenance</h3>
+<ol>
+<li>Check and tighten all screws</li>
+<li>Inspect wires for any signs of wear or damage</li>
+<li>Test all functions to ensure consistent performance</li>
+<li>Clean the circuit board gently with compressed air</li>
+</ol>
+<h3>Battery Care</h3>
+<ul>
+<li>Fully charge batteries before storing the car for extended periods</li>
+<li>If using rechargeable batteries, follow proper charging procedures</li>
+<li>Replace batteries if you notice significantly reduced performance</li>
+</ul>
 <h2>Troubleshooting</h2>
-<ol>
-<li>
-<p>Car won't move:</p>
+<p>If you encounter issues during operation, refer to our <a href="/faq/">FAQ</a> page for common problems and solutions. For persistent issues, consider revisiting the relevant assembly or setup steps.</p>
+<h2>Safety Precautions</h2>
 <ul>
-<li>Check battery charge on both car and controller</li>
-<li>Verify motor connections to the L293D driver</li>
+<li>Operate the car in a safe environment away from pets, small children, and fragile objects</li>
+<li>Do not expose the car to water or extreme temperatures</li>
+<li>Avoid running the car on rough surfaces that could damage the chassis or electronics</li>
+<li>Never leave the car unattended while powered on</li>
 </ul>
-</li>
-<li>
-<p>No wireless connection:</p>
+<h2>Customization and Upgrades</h2>
+<p>Your DIY Wireless Arduino Car is a platform for learning and experimentation. Consider these potential upgrades:</p>
 <ul>
-<li>Ensure both NRF24L01 modules are properly connected</li>
-<li>Check for interference from other devices</li>
-<li>Verify that both devices are using the same channel and address</li>
+<li>Adding sensors for obstacle detection</li>
+<li>Implementing more complex control algorithms</li>
+<li>Attaching a camera for first-person view driving</li>
+<li>Exploring autonomous navigation capabilities</li>
 </ul>
-</li>
-<li>
-<p>Erratic movement:</p>
-<ul>
-<li>Check for loose wheels or motor connections</li>
-<li>Verify L293D driver connections</li>
-</ul>
-</li>
-<li>
-<p>Limited range:</p>
-<ul>
-<li>Check NRF24L01 antenna orientation</li>
-<li>Move to an area with less interference</li>
-</ul>
-</li>
-</ol>
-<h2>Customization Ideas</h2>
-<ul>
-<li>Add LED lights for night operation</li>
-<li>Implement obstacle detection with ultrasonic sensors</li>
-<li>Create custom control sequences for complex maneuvers</li>
-<li>Add a small servo for a movable camera or sensor platform</li>
-</ul>
-<h2>Safety Guidelines</h2>
-<ul>
-<li>Operate in a clear, open area</li>
-<li>Avoid wet conditions to protect electronics</li>
-<li>Keep fingers away from moving parts, especially wheels and motors</li>
-<li>Supervise children during operation</li>
-<li>Be mindful of others when operating in public spaces</li>
-</ul>
-<h2>Next Steps</h2>
-<p>Now that you're familiar with operating your wireless car, why not try some modifications? Check out our community forum for ideas and share your own experiences!</p>
-<p>Remember, the key to mastering your wireless car is practice and experimentation. Enjoy exploring all the capabilities of your new creation!</p>
+<p>Remember, the key to successful upgrades is thorough planning and careful implementation. Always test new features incrementally to avoid complications.</p>
+<p>Enjoy operating your DIY Wireless Arduino Car, and happy driving!</p>
 
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Written by Your Name</p>
+            
+            <p>Tags: 
+                
+                    
+                        <a href="/tags/project">project</a>, 
+                    
+                
+                    
+                        <a href="/tags/operation">operation</a>
+                    
+                
+            </p>
+            
+        </div>
+    </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
