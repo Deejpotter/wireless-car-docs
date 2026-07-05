@@ -43,7 +43,7 @@ Before we begin, ensure you have the following:
 2. In the Arduino IDE, go to Tools > Board and select "Arduino Uno".
 3. Go to Tools > Port and select the port your Arduino is connected to.
 
-### 4. Write the Arduino Code
+### 4. Write the Arduino CodeS
 
 Here's a basic code structure for our wireless car. We'll create two separate sketches: one for the car (receiver) and one for the controller (transmitter).
 
